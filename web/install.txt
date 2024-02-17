@@ -1,0 +1,7 @@
+apt install docker.io
+(apt update)
+mkdir ~/ssr
+vi ~/ssr/config.json
+docker pull teddysun/shadowsocks-r
+docker run -d --name ssr --restart=always -p 7777:80 -p 7777:80/udp -v ~/ssr/config.json:/etc/shadowsocks-r/config.json teddysun/shadowsocks-r
+docker ps -a
